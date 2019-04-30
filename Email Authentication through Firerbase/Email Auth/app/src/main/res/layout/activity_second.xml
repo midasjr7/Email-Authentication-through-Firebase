@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
    <RelativeLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="300sp"
-        android:layout_height="300sp"
-        android:layout_marginLeft="45sp"
-        android:layout_marginTop="50sp"
-        android:background="@drawable/successcrop"
-        android:id="@+id/success"/>
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <pl.droidsonroids.gif.GifImageView
+           android:layout_width="300sp"
+           android:layout_height="300sp"
+           android:id="@+id/success"
+           android:layout_marginTop="50sp"
+           android:layout_marginLeft="50sp"
+           android:background="@drawable/successcrop"
+           />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +23,16 @@
         android:layout_below="@id/success"
         android:textSize="30sp"
         android:textColor="@color/colorPrimary"
-        android:layout_marginLeft="30sp"/>
+        android:layout_marginLeft="30sp"
+        android:id="@+id/text"/>
+       <ImageButton
+           android:layout_width="60sp"
+           android:layout_height="60sp"
+           android:id="@+id/logout"
+           android:layout_marginTop="20sp"
+           android:layout_marginLeft="150sp"
+           android:layout_below="@id/text"
+           android:background="@drawable/noun_logout"/>
    </RelativeLayout>
 
 

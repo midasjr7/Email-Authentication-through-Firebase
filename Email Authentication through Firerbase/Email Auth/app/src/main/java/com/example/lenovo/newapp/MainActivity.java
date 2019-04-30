@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthEmailException;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,7 +49,11 @@ private FirebaseAuth firebaseAuth;
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 validate(Name.getText().toString(),password.getText().toString());
+                }catch (IllegalArgumentException e){
+                    Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
+                }
             }
         });
         userRegistration.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +70,7 @@ private FirebaseAuth firebaseAuth;
            @Override
            public void onComplete(@NonNull Task<AuthResult> task) {
              if(task.isSuccessful()){
-                 Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
                  startActivity(new Intent(MainActivity.this, SecondActivity.class));
              }  else{
                  Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();

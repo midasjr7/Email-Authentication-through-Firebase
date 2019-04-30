@@ -1,29 +1,42 @@
 {
   "project_info": {
-    "project_number": "126761587894",
-    "firebase_url": "https://twilio-25c54.firebaseio.com",
-    "project_id": "twilio-25c54",
-    "storage_bucket": "twilio-25c54.appspot.com"
+    "project_number": "819886589129",
+    "firebase_url": "https://email-auth-255f0.firebaseio.com",
+    "project_id": "email-auth-255f0",
+    "storage_bucket": "email-auth-255f0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:126761587894:android:15ccda42d192cc3a",
+        "mobilesdk_app_id": "1:819886589129:android:15ccda42d192cc3a",
         "android_client_info": {
           "package_name": "com.example.lenovo.newapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "819886589129-akla7eopgq02uof9dtjocv280r8b2vjd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lenovo.newapp",
+            "certificate_hash": "1eaa8a27721ad65ec141f9eb930518934c774dc7"
+          }
+        },
+        {
+          "client_id": "819886589129-tne3ltel2h8ab6fj86s7c4uk71g69ubh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDL_uUWEw1OQUmVQH8NkcJjeti6pVP_nnI"
+          "current_key": "AIzaSyBSxhUUDYQEqEwf-0NobPJd6edKIUEY43g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "126761587894-73lga9pfoj7ssclppqdqlnen5gfn4cms.apps.googleusercontent.com",
+              "client_id": "819886589129-tne3ltel2h8ab6fj86s7c4uk71g69ubh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
