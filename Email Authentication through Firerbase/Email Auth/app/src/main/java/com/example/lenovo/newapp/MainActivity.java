@@ -43,7 +43,10 @@ private FirebaseAuth firebaseAuth;
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if(user !=null){
             finish();
-            startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            Intent i=new Intent(MainActivity.this, SecondActivity.class);
+            i.putExtra("Name",user.getEmail());
+            startActivity(i);
+
         }
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -59,19 +62,22 @@ private FirebaseAuth firebaseAuth;
         userRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
+                Intent i=new Intent(MainActivity.this, RegistrationActivity.class);
+                startActivity(i);
             }
         });
 
 
     }
-    private void validate(String userName, String userPassword){
+    private void validate(final String userName, String userPassword){
        firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
            @Override
            public void onComplete(@NonNull Task<AuthResult> task) {
              if(task.isSuccessful()){
                  Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
-                 startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                 Intent i=new Intent(MainActivity.this, SecondActivity.class);
+                 i.putExtra("Name",userName);
+                 startActivity(i);
              }  else{
                  Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                  counter--;
